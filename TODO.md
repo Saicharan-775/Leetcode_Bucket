@@ -1,0 +1,7 @@
+- [x] Define props for ProblemCard: title, level, status, lastReview, nextReview, attempts, tags, hint, leetcodeUrl, onMoveToStrict, onCheckboxChange, isChecked
+- [x] Set default props to current hardcoded values
+- [x] Implement dynamic styling for level and status
+- [x] Add onClick handlers for buttons
+- [x] Make checkbox controlled with onChange
+- [x] Clean up commented code and unused imports
+- [ ] Test the component

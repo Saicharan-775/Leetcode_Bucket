@@ -1,0 +1,89 @@
+@import "tailwindcss";
+/* @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap'); */
+
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  html, body {
+    height: 100%;
+    width: 100%;
+  }
+
+  :root {
+    /* Dark-first theme */
+    --background: #0d1113;
+    --foreground: #f5f5f5;
+
+    --card: #181a22;
+    --card-foreground: #1f2027;
+    
+    --popover: #181a22;
+    --popover-foreground: #f5f5f5;
+
+    --primary: #f5f5f5;
+    --primary-foreground: #0d1113;
+
+    --secondary: #1b1e23;
+    --secondary-foreground: #e6e6e6;
+
+    --muted: #1b1e23;
+    --muted-foreground: #999999;
+
+    --accent: #1b1e23;
+    --accent-foreground: #849295;
+
+    --destructive: #ff3b30;
+    --destructive-foreground: #f5f5f5;
+
+    --border: #2c2f33;
+    --input: #1b1e23;
+    --ring: #f5f5f5;
+
+    /* Bucket-specific colors */
+    --strict-primary: #443025; /* warm orange */
+    --strict-secondary: #fc6c22; /* red accent */
+    --strict-muted: #331a0a;
+    --strict-foreground: #fcf5eb;
+
+    --normal-primary: #124149; /* cool teal */
+    --normal-secondary: #0cc4f3; /* blue accent */
+    --normal-muted: #022426;
+    --normal-foreground: #e6f7ff;
+
+    /* Difficulty colors */
+    --easy: #3ccc3c;
+    --medium: #f6d12d;
+    --hard: #ff2a2a;
+
+    /* Status colors */
+    --success: #3ccc3c;
+    --warning: #f6d12d;
+    --info: #3bbaff;
+
+    /* Gradients */
+    --gradient-strict: linear-gradient(135deg, var(--strict-primary), var(--strict-secondary));
+    --gradient-normal: linear-gradient(135deg, var(--normal-primary), var(--normal-secondary));
+    --gradient-hero: linear-gradient(135deg, var(--background), var(--secondary));
+
+    /* Shadows */
+    --shadow-soft: 0 4px 12px rgba(9,12,16,0.3);
+    --shadow-medium: 0 8px 24px rgba(9,12,16,0.4);
+    --shadow-strict: 0 4px 12px rgba(252,108,34,0.2);
+    --shadow-normal: 0 4px 12px rgba(12,196,243,0.2);
+
+    --radius: 0.75rem;
+
+    /* Sidebar */
+    --sidebar-background: #fafafa;
+    --sidebar-foreground: #43464a;
+    --sidebar-primary: #1a1a1a;
+    --sidebar-primary-foreground: #fafafa;
+    --sidebar-accent: #f2f2f2;
+    --sidebar-accent-foreground: #1a1a1a;
+    --sidebar-border: #e0e0e0;
+    --sidebar-ring: #5e9eff;
+  }
+}
