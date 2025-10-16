@@ -70,7 +70,7 @@ const Dashboard = () => {
             <h1 className="font-medium text-4xl mb-2">Dashboard</h1>
             <p className="text-[var(--accent-foreground)]">
               Welcome back, Saicharan 👋 You have{" "}
-              <span className="text-[var(--normal-primary)] font-semibold">8 problems</span> due
+              <span className="text-[var(--normal-secondary)] font-semibold">8 problems</span> due
               for revision today.
             </p>
           </div>
