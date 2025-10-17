@@ -3,15 +3,15 @@ import { Flame } from 'lucide-react'; // optional icon for streak 🔥
 
 const StreakCard = () => {
   return (
-    <div className='bg-[#191a20] hover:bg-[#1f2027] w-full md:w-md p-6 rounded-2xl'>
-           <div className='flex items-center justify-between mb-4'>
+    <div className='bg-[#191a20] hover:bg-[#1f2027]  w-full max-w-sm p-4 md:p-6 h-fit rounded-2xl transition-all duration-200'>
+           <div className='flex items-center justify-between mb-2'>
             <h1 className='font-semibold text-lg text-gray-200'>Current Streak</h1>
              <Flame/>
            </div>
            <div className='text-center'>
-            <h1 className='font-bold text-5xl text-white mb-2 mt-10'>12🔥</h1>
+            <h1 className='font-bold text-4xl md:text-5xl text-white mb-2 md:mt-10'>12🔥</h1>
             <p className='text-gray-400 text-sm mb-1'>Days in a row</p>
-           <p className='text-gray-400 text-sm mt-4'>Keep it up! Your longest streak was 18 days.</p>
+           <p className='text-gray-400 text-sm mt-2'>Keep it up! Your longest streak was 18 days.</p>
            </div>
     </div>
   );

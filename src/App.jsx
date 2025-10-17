@@ -1,63 +1,40 @@
-
 import './App.css'
-import Dashboard from './pages/Dashboard'
-import Navbar from './components/Navbar'
 import "./index.css";
-import NormalBucket from './pages/NormalBucket'
-import StrictBucket from './pages/StrictBucket'
-import { createBrowserRouter,Navigate,RouterProvider } from 'react-router-dom';
-import Login from './pages/Login';
-import Analysis from './pages/Analysis';
-import Resourse from './pages/Resourse';
-const approuter=createBrowserRouter([
+import { createBrowserRouter, RouterProvider, Navigate } from "react-router-dom";
+import Login from "./pages/Login";
+import Dashboard from "./pages/Dashboard";
+import NormalBucket from "./pages/NormalBucket";
+import StrictBucket from "./pages/StrictBucket";
+import Analysis from "./pages/Analysis";
+import Resourse from "./pages/Resourse";
+import MainLayout from "./layouts/MainLayouts";
+
+const approuter = createBrowserRouter([
+  // Login route
   {
-    path:"/",
-    element:<Navigate to ="/dashboard"/>
+    path: "/login",
+    element: <Login />,
   },
+  // Default redirect (to dashboard)
   {
-    path:"/login",
-    element:<Login/>,
-  },{
-    path:"/dashboard",
-    element:
-    <>
-    <Navbar/>
-     <Dashboard/>,
-    </>
-   
+    path: "/",
+    element: <Navigate to="/dashboard" />,
   },
+  // All routes that share Navbar
   {
-    path:"/normal-bucket",
-    element:  <>
-    <Navbar/>
-     <NormalBucket/>,
-    </>
+    element: <MainLayout />, // 👈 Shared layout
+    children: [
+      { path: "/dashboard", element: <Dashboard /> },
+      { path: "/normal-bucket", element: <NormalBucket /> },
+      { path: "/strict-bucket", element: <StrictBucket /> },
+      { path: "/analysis", element: <Analysis /> },
+      { path: "/resourses", element: <Resourse /> },
+    ],
   },
-   {
-    path:"/strict-bucket",
-    element:  <>
-    <Navbar/>
-     <StrictBucket/>,
-    </>
-  },
-  {
-    path:"/analysis",
-    element:  <>
-    <Navbar/>
-     <Analysis/>,
-    </>
-  },
-  {
-    path:"/resourses",
-    element:  <>
-    <Navbar/>
-     <Resourse/>,
-    </>
-  },
-])
+]);
+
 function App() {
-  return  <RouterProvider router={approuter} />;
-  
+  return <RouterProvider router={approuter} />;
 }
 
-export default App
+export default App;

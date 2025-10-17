@@ -15,7 +15,7 @@ const ProgressCard = () => {
   const normalProgress = Math.round((normalSolved / normalTotal) * 100);
 
   return (
-    <div className="bg-[#191a20] hover:bg-[#1f2027] transition-all duration-300 p-6 rounded-2xl mb-2 w-full md:w-[450px] shadow-lg border border-gray-800">
+    <div className="bg-[#191a20] hover:bg-[#1f2027] transition-all duration-300 p-4 md:p-6 rounded-2xl mb-2 w-96 h-fit max-w-md shadow-lg border border-gray-800">
       {/* Title */}
       <h1 className="text-gray-300 font-semibold text-lg mb-4">Overall Progress</h1>
 

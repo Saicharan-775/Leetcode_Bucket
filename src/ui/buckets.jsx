@@ -6,7 +6,7 @@ const Buckets = ({ borderColor, bgColor, iconColor, icon: Icon, name, descriptio
   return (
     <div className="w-full">
       <div
-        className="bg-[var(--card)] mt-5 border-2 p-4 m-1 rounded-xl h-60"
+        className="bg-[var(--card)] mt-5 border-2 p-4 m-1 rounded-xl h-60 md:h-64"
         style={{ borderColor: borderColor }}
       >
         {/* Header */}

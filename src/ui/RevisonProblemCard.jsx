@@ -5,19 +5,19 @@ import Button from "./button";
 import { ArrowRight } from "lucide-react";
 const RevisonProblemCard = () => {
   return (
-    <div className="bg-[var(--card)] border border-[var(--card-foreground)] rounded-xl p-5 shadow-md hover:shadow-lg transition flex justify-between items-center">
+    <div className="bg-[var(--card)] border border-[var(--card-foreground)] rounded-xl p-4 md:p-5 shadow-md hover:shadow-lg transition-all duration-200 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
       {/* Left Content */}
-      <div className="flex flex-col gap-3">
+      <div className="flex flex-col gap-3 w-full md:w-auto">
         {/* Title and Difficulty */}
-        <div className="flex items-center gap-3">
+        <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3">
           <h1 className="font-bold text-lg text-white">Two Sum</h1>
-          <p className="text-xs font-semibold text-white px-2 py-1 rounded-md" style={{ backgroundColor: "#166534" }}>
+          <p className="text-xs font-semibold text-white px-2 py-1 rounded-md self-start sm:self-auto" style={{ backgroundColor: "#166534" }}>
             Easy
           </p>
         </div>
 
         {/* Status info */}
-        <div className="flex gap-6 text-[var(--accent-foreground)] text-sm">
+        <div className="flex flex-col sm:flex-row gap-2 sm:gap-6 text-[var(--accent-foreground)] text-sm">
           <p>Strict</p>
           <p>Failed 2 Days Ago</p>
         </div>
@@ -32,10 +32,8 @@ const RevisonProblemCard = () => {
       </div>
 
       {/* Start Button */}
-      <div>
-         <Button icon={ArrowRight}name="Start"/>
-          
-        
+      <div className="w-full md:w-auto">
+         <Button icon={ArrowRight} name="Start"/>
       </div>
     </div>
   );

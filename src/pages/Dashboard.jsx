@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Button from "../ui/button";
 import RevisonProblemCard from "../ui/RevisonProblemCard";
 import {
@@ -15,7 +15,6 @@ import StatsCards from "../ui/StatCards";
 import Bucket from "../ui/buckets";
 import StreakCard from "../ui/StreakCard";
 import ProgressCard from "../ui/ProgressCard";
-import Sidebar from "../ui/Sidebar";
 
 const statCards = [
   {
@@ -58,27 +57,23 @@ const statCards = [
 ];
 
 const Dashboard = () => {
-  const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
+
 
   return (
-    <div className="min-h-screen w-full bg-[var(--background)] mt-4 text-[var(--primary)] overflow-x-hidden">
-      <Sidebar onCollapseChange={setSidebarCollapsed} />
-      <div className={`ml-0 transition-all duration-300 ${sidebarCollapsed ? 'md:ml-16' : 'md:ml-64'}`}>
+    <div className="min-h-screen mt-4 w-full bg-[var(--background)] text-[var(--primary)]">
+      {/* Main Content */}
+      <div className="flex flex-col p-4 md:p-6 overflow-auto">
         {/* Header */}
-        <div className="pt-20 px-6">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
           <div>
             <h1 className="font-medium text-4xl mb-2">Dashboard</h1>
             <p className="text-[var(--accent-foreground)]">
               Welcome back, Saicharan 👋 You have{" "}
-              <span className="text-[var(--normal-secondary)] font-semibold">
-                8 problems
-              </span>{" "}
-              due for revision today.
+              <span className="text-[var(--normal-secondary)] font-semibold">8 problems</span> due for revision today.
             </p>
           </div>
 
-          <div className="flex flex-wrap gap-4 mt-4 md:mt-0">
+          <div className="flex flex-wrap gap-2 md:gap-4 mt-4 md:mt-0">
             <Button icon={Plus} name="Add Problem" />
             <Button icon={Shuffle} name="Random Practice" />
             <Button icon={BookOpen} name="Study Resources" />
@@ -100,17 +95,10 @@ const Dashboard = () => {
         </div>
 
         {/* Main Custom Grid */}
-        <div className="mt-10">
-          <h2 className="text-3xl font-semibold mb-6">Your Buckets</h2>
+        <div className="mt-6">
+          <h2 className="text-3xl font-semibold mb-4">Your Buckets</h2>
 
-          <div
-            className="
-              grid
-              grid-cols-1
-              lg:grid-cols-3
-              gap-6
-            "
-          >
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
             {/* Row 1 - Strict, Normal, Streak */}
             <Bucket
               borderColor="#443025"
@@ -136,16 +124,16 @@ const Dashboard = () => {
 
             {/* Row 2 - Today's Revision & Progress */}
             <div className="lg:col-span-2 space-y-4">
-              <h3 className="text-2xl font-semibold">
-                Today's Revision
-              </h3>
+              <h3 className="text-2xl font-semibold">Today's Revision</h3>
+              <RevisonProblemCard />
               <RevisonProblemCard />
               <RevisonProblemCard />
             </div>
 
-            <ProgressCard />
+            <div className="flex justify-center -mt-16">
+              <ProgressCard />
+            </div>
           </div>
-        </div>
         </div>
       </div>
     </div>

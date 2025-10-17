@@ -1,9 +1,17 @@
 import React from 'react'
-
+import Sidebar from '../ui/Sidebar'
 const Analysis = () => {
+    
   return (
-    <div>Analysis</div>
+    <div >
+        
+        <div>
+                <h1>Analysis</h1>
+        </div>
+        
+
+    </div>
   )
 }
 
-export default Analysis
+export default Analysis;
