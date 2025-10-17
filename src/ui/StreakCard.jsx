@@ -9,9 +9,9 @@ const StreakCard = () => {
              <Flame/>
            </div>
            <div className='text-center'>
-            <h1 className='font-bold text-5xl text-white mb-2'>12🔥</h1>
+            <h1 className='font-bold text-5xl text-white mb-2 mt-10'>12🔥</h1>
             <p className='text-gray-400 text-sm mb-1'>Days in a row</p>
-           <p className='text-gray-400 text-sm'>Keep it up! Your longest streak was 18 days.</p>
+           <p className='text-gray-400 text-sm mt-4'>Keep it up! Your longest streak was 18 days.</p>
            </div>
     </div>
   );

@@ -54,9 +54,9 @@
     --normal-foreground: #e6f7ff;
 
     /* Difficulty colors */
-    --easy: #3ccc3c;
-    --medium: #f6d12d;
-    --hard: #ff2a2a;
+    --easy: #166534;
+    --medium: #f97316;
+    --hard: #2c1e23;
 
     /* Status colors */
     --success: #3ccc3c;

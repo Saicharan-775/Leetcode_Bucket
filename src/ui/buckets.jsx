@@ -4,7 +4,7 @@ import { ArrowRight } from "lucide-react";
 
 const Buckets = ({ borderColor, bgColor, iconColor, icon: Icon, name, description, value }) => {
   return (
-    <div className="w-full sm:w-[460px]">
+    <div className="w-full">
       <div
         className="bg-[var(--card)] mt-5 border-2 p-4 m-1 rounded-xl h-60"
         style={{ borderColor: borderColor }}

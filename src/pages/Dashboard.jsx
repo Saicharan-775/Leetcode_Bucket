@@ -1,8 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import Button from "../ui/button";
-
+import RevisonProblemCard from "../ui/RevisonProblemCard";
 import {
-  User,
   Shuffle,
   BookOpen,
   Plus,
@@ -14,11 +13,10 @@ import {
 } from "lucide-react";
 import StatsCards from "../ui/StatCards";
 import Bucket from "../ui/buckets";
-import NormalBucket from "../pages/NormalBucket";
 import StreakCard from "../ui/StreakCard";
 import ProgressCard from "../ui/ProgressCard";
+import Sidebar from "../ui/Sidebar";
 
-// Stats card data
 const statCards = [
   {
     title: "Total Problems",
@@ -60,22 +58,26 @@ const statCards = [
 ];
 
 const Dashboard = () => {
+  const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
+
   return (
     <div className="min-h-screen w-full bg-[var(--background)] mt-4 text-[var(--primary)] overflow-x-hidden">
-      {/* Header Section */}
-      <div className="pt-20 px-6">
+      <Sidebar onCollapseChange={setSidebarCollapsed} />
+      <div className={`ml-0 transition-all duration-300 ${sidebarCollapsed ? 'md:ml-16' : 'md:ml-64'}`}>
+        {/* Header */}
+        <div className="pt-20 px-6">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
-          {/* Title */}
           <div>
             <h1 className="font-medium text-4xl mb-2">Dashboard</h1>
             <p className="text-[var(--accent-foreground)]">
               Welcome back, Saicharan 👋 You have{" "}
-              <span className="text-[var(--normal-secondary)] font-semibold">8 problems</span> due
-              for revision today.
+              <span className="text-[var(--normal-secondary)] font-semibold">
+                8 problems
+              </span>{" "}
+              due for revision today.
             </p>
           </div>
 
-          {/* Action Buttons */}
           <div className="flex flex-wrap gap-4 mt-4 md:mt-0">
             <Button icon={Plus} name="Add Problem" />
             <Button icon={Shuffle} name="Random Practice" />
@@ -83,7 +85,7 @@ const Dashboard = () => {
           </div>
         </div>
 
-        {/* Stats Cards Section */}
+        {/* Stats Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-6 mt-5">
           {statCards.map((card, idx) => (
             <StatsCards
@@ -97,42 +99,54 @@ const Dashboard = () => {
           ))}
         </div>
 
-        {/* Buckets Section */}
-        <div className="mt-4">
-          <h2 className="text-3xl font-semibold mb-4">Your Buckets</h2>
+        {/* Main Custom Grid */}
+        <div className="mt-10">
+          <h2 className="text-3xl font-semibold mb-6">Your Buckets</h2>
 
-          <div className="flex flex-col lg:flex-row gap-10">
-            {/* Bucket Cards */}
-            <div className="flex flex-wrap gap-6">
-              <Bucket
-                borderColor="#443025"
-                bgColor="#fc6c22"
-                iconColor="#fff"
-                icon={statCards[1].icons}
-                name={statCards[1].title}
-                description={statCards[1].description}
-                value={15}
-              />
+          <div
+            className="
+              grid
+              grid-cols-1
+              lg:grid-cols-3
+              gap-6
+            "
+          >
+            {/* Row 1 - Strict, Normal, Streak */}
+            <Bucket
+              borderColor="#443025"
+              bgColor="#fc6c22"
+              iconColor="#fff"
+              icon={Target}
+              name="Strict Bucket"
+              description="Hardcore practice mode"
+              value={15}
+            />
 
-              <Bucket
-                borderColor="#124149"
-                bgColor="#0cc4f3"
-                iconColor="#fff"
-                icon={statCards[2].icons}
-                name={statCards[2].title}
-                description={statCards[2].description}
-                value={75}
-              />
+            <Bucket
+              borderColor="#124149"
+              bgColor="#0cc4f3"
+              iconColor="#fff"
+              icon={Zap}
+              name="Normal Bucket"
+              description="Regular learning mode"
+              value={75}
+            />
+
+            <StreakCard />
+
+            {/* Row 2 - Today's Revision & Progress */}
+            <div className="lg:col-span-2 space-y-4">
+              <h3 className="text-2xl font-semibold">
+                Today's Revision
+              </h3>
+              <RevisonProblemCard />
+              <RevisonProblemCard />
             </div>
 
-            {/* Streak + Progress Section */}
-            <div className="flex flex-col gap-6 w-full md:w-auto ">
-              <StreakCard />
-              <ProgressCard />
-            </div>
+            <ProgressCard />
           </div>
         </div>
-
+        </div>
       </div>
     </div>
   );
