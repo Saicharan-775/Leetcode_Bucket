@@ -7,13 +7,21 @@
     padding: 0;
     box-sizing: border-box;
   }
-  html, body {
-    height: 100%;
-    width: 100%;
-  }
+ html, body {
+  height: 100%;
+  background-color: var(--background, #0d1113); /* your dark background */
+  overflow: hidden; /* prevent white overscroll flash */
+  color: var(--primary, #f5f5f5);
 
+}
+
+body {
+  overflow: hidden; /* prevent body scroll, only content scrolls */
+}
   :root {
     /* Dark-first theme */
+    height: 100%;
+  background-color: var(--background, #0d1113);
     --background: #0d1113;
     --foreground: #f5f5f5;
 

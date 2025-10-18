@@ -3,7 +3,7 @@ import { Flame } from 'lucide-react'; // optional icon for streak 🔥
 
 const StreakCard = () => {
   return (
-    <div className='bg-[#191a20] hover:bg-[#1f2027]  w-full max-w-sm p-4 md:p-6 h-fit rounded-2xl transition-all duration-200'>
+    <div className='bg-[#191a20] hover:bg-[#1f2027]  w-full p-4 md:p-6 h-fit rounded-2xl transition-all duration-200'>
            <div className='flex items-center justify-between mb-2'>
             <h1 className='font-semibold text-lg text-gray-200'>Current Streak</h1>
              <Flame/>

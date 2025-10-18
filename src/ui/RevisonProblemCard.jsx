@@ -5,7 +5,7 @@ import Button from "./button";
 import { ArrowRight } from "lucide-react";
 const RevisonProblemCard = () => {
   return (
-    <div className="bg-[var(--card)] border border-[var(--card-foreground)] rounded-xl p-4 md:p-5 shadow-md hover:shadow-lg transition-all duration-200 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+    <div className="bg-[var(--card)] mb-2 border border-[var(--card-foreground)] rounded-xl p-4 md:p-5 shadow-md hover:shadow-lg transition-all duration-200 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
       {/* Left Content */}
       <div className="flex flex-col gap-3 w-full md:w-auto">
         {/* Title and Difficulty */}

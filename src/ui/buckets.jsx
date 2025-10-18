@@ -6,7 +6,7 @@ const Buckets = ({ borderColor, bgColor, iconColor, icon: Icon, name, descriptio
   return (
     <div className="w-full">
       <div
-        className="bg-[var(--card)] mt-5 border-2 p-4 m-1 rounded-xl h-60 md:h-64"
+        className="bg-[var(--card)] mt-5 border-2 p-4 m-1 rounded-xl h-auto min-h-[240px] md:min-h-[256px]"
         style={{ borderColor: borderColor }}
       >
         {/* Header */}
@@ -26,7 +26,7 @@ const Buckets = ({ borderColor, bgColor, iconColor, icon: Icon, name, descriptio
           </div>
 
           <div className="flex items-center">
-            <p className="bg-[var(--muted)] rounded-full px-3 py-1 text-sm border border-gray-700">
+            <p className="bg-[var(--muted)] rounded-full px-3 py-1 text-sm border border-gray-700 whitespace-nowrap">
               24 problems
             </p>
           </div>

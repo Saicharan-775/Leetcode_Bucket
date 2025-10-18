@@ -5,135 +5,109 @@ import {
   Shuffle,
   BookOpen,
   Plus,
-  TrendingUp,
   Target,
   Zap,
-  Clock,
-  CircleCheckBig,
+ 
+  
 } from "lucide-react";
 import StatsCards from "../ui/StatCards";
 import Bucket from "../ui/buckets";
 import StreakCard from "../ui/StreakCard";
 import ProgressCard from "../ui/ProgressCard";
-
-const statCards = [
-  {
-    title: "Total Problems",
-    value: "100",
-    icons: TrendingUp,
-    bgColor: "#192a37",
-    iconColor: "#1ba6ed",
-  },
-  {
-    title: "Strict Mode",
-    value: "20",
-    icons: Target,
-    bgColor: "#2e2723",
-    iconColor: "#ff922b",
-    description: "High-intensity revision",
-  },
-  {
-    title: "Normal Mode",
-    value: "125",
-    icons: Zap,
-    bgColor: "#172d35",
-    iconColor: "#03c4d3",
-    description: "Regular practice schedule",
-  },
-  {
-    title: "Avg Review Time",
-    value: "18",
-    icons: Clock,
-    bgColor: "#2f2a21",
-    iconColor: "#daad1e",
-  },
-  {
-    title: "Success Rate",
-    value: "87%",
-    icons: CircleCheckBig,
-    bgColor: "#1a2d22",
-    iconColor: "#31b931",
-  },
-];
+import Tags from "../ui/Tags";
+import {statCards} from "../constants/constants"
 
 const Dashboard = () => {
-
-
   return (
-    <div className="min-h-screen mt-4 w-full bg-[var(--background)] text-[var(--primary)]">
-      {/* Main Content */}
-      <div className="flex flex-col p-4 md:p-6 overflow-auto">
-        {/* Header */}
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+    <div className="w-full bg-[var(--background)] text-[var(--primary)] p-2 -ml-2 sm:p-6 pt-0">
+      {/* Header */}
+      <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-4 mb-4">
+        <div>
+          <h1 className="font-medium text-2xl sm:text-3xl lg:text-4xl mb-2">
+            Dashboard
+          </h1>
+          <p className="text-[var(--accent-foreground)] text-sm sm:text-base">
+            Welcome back, Saicharan 👋 You have{" "}
+            <span className="text-[var(--normal-secondary)] font-semibold">
+              8 problems
+            </span>{" "}
+            due for revision today.
+          </p>
+        </div>
+
+        <div className="flex flex-wrap gap-2 md:gap-4 mt-4 lg:mt-0">
+          <Button icon={Plus} name="Add Problem" />
+          <Button icon={Shuffle} name="Random Practice" />
+          <Button icon={BookOpen} name="Study Resources" />
+        </div>
+      </div>
+
+      {/* Quick Stats */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-4 sm:gap-6 mb-6 sm:mb-10">
+        {statCards.map((card, idx) => (
+          <StatsCards
+            key={idx}
+            title={card.title}
+            value={card.value}
+            icons={card.icons}
+            bgColor={card.bgColor}
+            iconColor={card.iconColor}
+          />
+        ))}
+      </div>
+
+      {/* Main Grid Layout */}
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
+        {/* LEFT SIDE (Main Dashboard Area) */}
+        <div className="lg:col-span-2 space-y-6 sm:space-y-8">
+          {/* Buckets Section */}
           <div>
-            <h1 className="font-medium text-4xl mb-2">Dashboard</h1>
-            <p className="text-[var(--accent-foreground)]">
-              Welcome back, Saicharan 👋 You have{" "}
-              <span className="text-[var(--normal-secondary)] font-semibold">8 problems</span> due for revision today.
-            </p>
+            <h2 className="text-xl sm:text-2xl lg:text-3xl font-semibold mb-6">
+              Your Buckets
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+              <Bucket
+                borderColor="#443025"
+                bgColor="#fc6c22"
+                iconColor="#fff"
+                icon={Target}
+                name="Strict Bucket"
+                description="Hardcore practice mode"
+                value={15}
+              />
+              <Bucket
+                borderColor="#124149"
+                bgColor="#0cc4f3"
+                iconColor="#fff"
+                icon={Zap}
+                name="Normal Bucket"
+                description="Regular learning mode"
+                value={75}
+              />
+            </div>
           </div>
 
-          <div className="flex flex-wrap gap-2 md:gap-4 mt-4 md:mt-0">
-            <Button icon={Plus} name="Add Problem" />
-            <Button icon={Shuffle} name="Random Practice" />
-            <Button icon={BookOpen} name="Study Resources" />
+          {/* Today's Revision */}
+          <div className="space-y-4">
+            <div className="flex justify-between">
+                  <h3 className="text-lg sm:text-xl lg:text-2xl font-semibold">
+                  Today's Revision
+                </h3>
+                <div className="flex">
+               <Tags tag="3 Problems"/>
+                </div>
+            </div>
+            
+            <RevisonProblemCard />
+            <RevisonProblemCard />
+            <RevisonProblemCard />
           </div>
         </div>
 
-        {/* Stats Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-6 mt-5">
-          {statCards.map((card, idx) => (
-            <StatsCards
-              key={idx}
-              title={card.title}
-              value={card.value}
-              icons={card.icons}
-              bgColor={card.bgColor}
-              iconColor={card.iconColor}
-            />
-          ))}
-        </div>
-
-        {/* Main Custom Grid */}
-        <div className="mt-6">
-          <h2 className="text-3xl font-semibold mb-4">Your Buckets</h2>
-
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-            {/* Row 1 - Strict, Normal, Streak */}
-            <Bucket
-              borderColor="#443025"
-              bgColor="#fc6c22"
-              iconColor="#fff"
-              icon={Target}
-              name="Strict Bucket"
-              description="Hardcore practice mode"
-              value={15}
-            />
-
-            <Bucket
-              borderColor="#124149"
-              bgColor="#0cc4f3"
-              iconColor="#fff"
-              icon={Zap}
-              name="Normal Bucket"
-              description="Regular learning mode"
-              value={75}
-            />
-
-            <StreakCard />
-
-            {/* Row 2 - Today's Revision & Progress */}
-            <div className="lg:col-span-2 space-y-4">
-              <h3 className="text-2xl font-semibold">Today's Revision</h3>
-              <RevisonProblemCard />
-              <RevisonProblemCard />
-              <RevisonProblemCard />
-            </div>
-
-            <div className="flex justify-center -mt-16">
-              <ProgressCard />
-            </div>
-          </div>
+        {/* RIGHT SIDE (Sidebar Area) */}
+        <div className="space-y-6 sm:space-y-8">
+          <StreakCard />
+          <ProgressCard />
         </div>
       </div>
     </div>

@@ -1,5 +1,5 @@
 import React from "react";
-import { LayoutDashboard, Target, Zap, BarChart, BookOpen, Menu } from "lucide-react";
+import { LayoutDashboard, Target, Zap, BarChart, BookOpen, Menu,ClipboardClock} from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 
 const Sidebar = ({ isOpen, setIsOpen }) => {
@@ -7,27 +7,29 @@ const Sidebar = ({ isOpen, setIsOpen }) => {
 
   const links = [
     { name: "Dashboard", path: "/dashboard", icon: LayoutDashboard },
+     { name: "Todays Review Queue", path: "/review-queue", icon: ClipboardClock },
     { name: "Strict", path: "/strict-bucket", icon: Target },
     { name: "Normal", path: "/normal-bucket", icon: Zap },
     { name: "Analysis", path: "/analysis", icon: BarChart },
     { name: "Resources", path: "/resourses", icon: BookOpen },
+   
   ];
 
   return (
     <div className="main-container h-screen">
       <div
-        className={`bg-[var(--card)] text-white h-full flex flex-col transition-all duration-300 relative md:relative fixed md:translate-x-0 z-40 ${isOpen ? 'w-[250px]' : 'w-[60px]'} ${isOpen ? 'translate-x-0' : '-translate-x-full md:translate-x-0'}`}
+        className={`bg-[var(--card)] text-white h-full flex flex-col transition-all duration-300 fixed z-50 top-0 ${isOpen ? 'w-[250px]' : 'w-[50px]'} ${isOpen ? 'translate-x-0' : '-translate-x-full md:translate-x-0'}`}
       >
         {/* Toggle button */}
         <button
-          className="absolute top-4 right-[-12px] mr-6 bg-blue-600 hover:bg-blue-700 rounded-full w-8 h-8 flex items-center justify-center transition-colors duration-200 z-50"
+          className="absolute top-4 right-[-16px] mr-6 bg-blue-600 hover:bg-blue-700 rounded-full w-8 h-8 flex items-center justify-center transition-colors duration-200 z-50"
           onClick={() => setIsOpen(!isOpen)}
         >
           <Menu size={16} />
         </button>
 
         {/* Sidebar content */}
-        <div className="flex flex-col gap-4 mt-16 p-2">
+        <div className="flex flex-col gap-4 mt-16 p-2 font-medium">
           {links.map(({ name, path, icon: IconComponent }) => (
             <Link
               key={name}
@@ -40,7 +42,7 @@ const Sidebar = ({ isOpen, setIsOpen }) => {
                 }`}
             >
               <IconComponent size={18} />
-              {isOpen && <span className="text-sm">{name}</span>}
+              {isOpen && <span className="text-sm ">{name}</span>}
             </Link>
           ))}
         </div>

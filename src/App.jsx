@@ -8,7 +8,7 @@ import StrictBucket from "./pages/StrictBucket";
 import Analysis from "./pages/Analysis";
 import Resourse from "./pages/Resourse";
 import MainLayout from "./layouts/MainLayouts";
-
+import ReviewQueue from './pages/ReviewQueue';
 const approuter = createBrowserRouter([
   // Login route
   {
@@ -29,6 +29,8 @@ const approuter = createBrowserRouter([
       { path: "/strict-bucket", element: <StrictBucket /> },
       { path: "/analysis", element: <Analysis /> },
       { path: "/resourses", element: <Resourse /> },
+      { path: "/review-queue", element: <ReviewQueue /> },
+      
     ],
   },
 ]);
