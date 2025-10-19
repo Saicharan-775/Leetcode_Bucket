@@ -9,6 +9,8 @@ import Analysis from "./pages/Analysis";
 import Resourse from "./pages/Resourse";
 import MainLayout from "./layouts/MainLayouts";
 import RevisionQueue from './pages/RevisionQueue';
+import Settings  from './pages/Settings';
+import  History  from './pages/ProblemHistory';
 const approuter = createBrowserRouter([
   // Login route
   {
@@ -30,7 +32,8 @@ const approuter = createBrowserRouter([
       { path: "/analysis", element: <Analysis /> },
       { path: "/resourses", element: <Resourse /> },
       { path: "/revision-queue", element: <RevisionQueue /> },
-      
+     { path: "/settings", element: <Settings /> },
+     { path: "/history", element: <History /> },
     ],
   },
 ]);

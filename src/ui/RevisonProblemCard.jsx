@@ -3,32 +3,35 @@ import "../index.css";
 import Tags from "../ui/Tags";
 import Button from "./button";
 import { ArrowRight, Clock } from "lucide-react";
-import { Link } from "react-router-dom";
-const RevisonProblemCard = ({ bucket,level,name,title }) => {
+
+const RevisonProblemCard = ({ bucket, level, name, title }) => {
   const status = bucket; // "Strict" or "Normal"
   const statusColor = status === "Strict" ? "bg-orange-500" : "bg-blue-500";
-  // const Timer = level==="Easy"?"15 min" : "45 min";
-    const difficultyColors = {
+
+  const difficultyColors = {
     Easy: "bg-[var(--easy)]",
     Medium: "bg-[var(--medium)]",
     Hard: "bg-[var(--hard)]",
   };
-     const Timers = {
+
+  const Timers = {
     Easy: 15,
     Medium: 45,
     Hard: 60,
   };
+
   const color = difficultyColors[level] || "bg-gray-500";
-  const timer=Timers[level] ||20;
+  const timer = Timers[level] || 20;
+
   return (
     <div
       className="
-      relative bg-[var(--card)] mb-2 border border-[var(--card-foreground)] rounded-xl 
-      p-4 md:p-5 shadow-md 
-      hover:shadow-lg hover:scale-[1.02] 
-      transition-transform duration-300 ease-in-out 
-      flex flex-col md:flex-row justify-between items-start md:items-center gap-4
-      transform-gpu will-change-transform
+        relative bg-[var(--card)] mb-2 border border-[var(--card-foreground)] rounded-xl 
+        p-4 md:p-5 shadow-md 
+        hover:shadow-lg hover:scale-[1.02] 
+        transition-transform duration-300 ease-in-out 
+        flex flex-col md:flex-row justify-between items-start md:items-center gap-4
+        transform-gpu will-change-transform
       "
     >
       {/* 🔴 Status Circle — centered vertically */}
@@ -44,13 +47,12 @@ const RevisonProblemCard = ({ bucket,level,name,title }) => {
 
           <div className="flex items-center gap-2">
             <p
-              className={` text-xs font-semibold text-white px-2 py-1 rounded-3xl ${color}`}
-              
+              className={`text-xs font-semibold text-white px-2 py-1 rounded-3xl ${color}`}
             >
               {level}
             </p>
 
-           <p><Tags tag={timer} icon={Clock} /></p> 
+            <Tags tag={timer} icon={Clock} />
           </div>
         </div>
 
@@ -72,12 +74,12 @@ const RevisonProblemCard = ({ bucket,level,name,title }) => {
       {/* Start Button */}
       <div className="w-full md:w-auto">
         <a
-        href={`https://leetcode.com/problems/${name}/description/`}
-        target="_blank"
-        rel="noopener noreferrer"
-       >
-     <Button icon={ArrowRight} name="Start" />
-      </a>
+          href={`https://leetcode.com/problems/${name}/description/`}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Button icon={ArrowRight} name="Start" />
+        </a>
       </div>
     </div>
   );

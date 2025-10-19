@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { User, Plus, Menu ,Search} from "lucide-react";
+import { User, Plus, Menu, Search } from "lucide-react";
 import "../index.css";
 import Button from "../ui/button";
 
@@ -8,25 +8,23 @@ const Navbar = ({ toggleSidebar, isSidebarOpen }) => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 100) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
+      setIsScrolled(window.scrollY > 100);
     };
 
     window.addEventListener("scroll", handleScroll);
-
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
     <nav
-      className={`fixed top-0 left-4  right-4 w-auto z-40 flex items-center justify-between  p-4 md:p-6 transition-all duration-300 ${
+      className={`fixed top-0 left-4 right-4 w-auto z-40 flex items-center justify-between p-4 md:p-6 
+      transition-all duration-300 rounded-xl
+      ${
         isScrolled
-          ? "bg-[rgba(13,17,19,0.9)] backdrop-blur-md border border-[#61656c]"
-          : "bg-[rgba(13,17,19,0.1)] backdrop-blur-sm border border-transparent"
-      } ${isSidebarOpen ? 'md:pl-[250px]' : 'md:pl-[60px]'} md:pl-0`}
+          ? "bg-[rgba(13,17,19,0.95)] backdrop-blur-md border border-[#3e4146] shadow-[0_0_10px_rgba(0,0,0,0.4)]"
+          : "bg-[rgba(13,17,19,0.6)] backdrop-blur-sm border border-[#2c2f33]"
+      }
+      ${isSidebarOpen ? "md:pl-[250px]" : "md:pl-[60px]"} md:pl-0`}
     >
       {/* Left - Logo and Toggle */}
       <div className="flex items-center gap-2 sm:gap-4">
@@ -43,25 +41,24 @@ const Navbar = ({ toggleSidebar, isSidebarOpen }) => {
       </div>
 
       {/* Middle - Search */}
-     <div className="flex flex-1 max-w-xs md:max-w-md md:mx-4 relative">
-  {/* Search Icon */}
-  <Search
-    size={16}
-    className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"
-  />
+      <div className="flex flex-1 max-w-xs md:max-w-md md:mx-4 relative">
+        <Search
+          size={16}
+          className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"
+        />
+        <input
+          type="text"
+          placeholder="Search Problems..."
+          className="w-full rounded-md bg-[#16181a] pl-9 md:pl-10 pr-3 md:px-2 py-2 md:py-3 
+                     border border-[#3e4146] text-sm font-medium 
+                     focus:outline-none focus:ring-2 focus:ring-amber-50"
+        />
+      </div>
 
-  {/* Input Field */}
-  <input
-    type="text"
-    placeholder="Search Problems...."
-    className="w-full rounded-md bg-[#16181a] pl-9 md:pl-10 pr-3 md:px-2 py-2 md:py-3 border border-[#3e4146] text-sm font-medium focus:outline-none focus:ring-2 focus:ring-amber-50"
-  />
-</div>
-   
       {/* Right - Buttons */}
       <div className="flex items-center gap-2 md:gap-6 mr-6 md:mr-5">
         <Button icon={Plus} name="Add Problem" />
-        <h3 className="cursor-pointer hover:text-amber-50">
+        <h3 className="cursor-pointer hover:text-amber-50 transition-colors duration-200">
           <User />
         </h3>
       </div>
