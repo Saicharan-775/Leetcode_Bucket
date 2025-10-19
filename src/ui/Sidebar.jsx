@@ -7,7 +7,7 @@ const Sidebar = ({ isOpen, setIsOpen }) => {
 
   const links = [
     { name: "Dashboard", path: "/dashboard", icon: LayoutDashboard },
-     { name: "Todays Review Queue", path: "/review-queue", icon: ClipboardClock },
+     { name: "Todays Review Queue", path: "/revision-queue", icon: ClipboardClock },
     { name: "Strict", path: "/strict-bucket", icon: Target },
     { name: "Normal", path: "/normal-bucket", icon: Zap },
     { name: "Analysis", path: "/analysis", icon: BarChart },

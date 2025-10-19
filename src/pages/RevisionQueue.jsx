@@ -5,7 +5,7 @@ import {reviewcards} from "../constants/constants"// getting review cards data  
 import StatCards from '../ui/StatCards'
 import ProgressBar from '../ui/Progressbar'
 import RevisonProblemCard from '../ui/RevisonProblemCard'
-const ReviewQueue = () => {
+const RevisionQueue = () => {
   return (
     <div className='mt-2 '>
         <div className='flex justify-between'> 
@@ -74,10 +74,10 @@ const ReviewQueue = () => {
           <p className='text-[var(--muted-foreground)]'>Ordered by priority (Strict problems first)</p>
         </div>
       </div>
-      <div>
-         <RevisonProblemCard/>
-         <RevisonProblemCard/>
-          <RevisonProblemCard/>
+      <div className='w-6xl'>
+         <RevisonProblemCard bucket="Strict"/>
+         <RevisonProblemCard bucket="Normal" />
+          <RevisonProblemCard bucket="Normal"/>
       </div>
       
        
@@ -88,4 +88,4 @@ const ReviewQueue = () => {
   )
 }
 
-export default ReviewQueue;
+export default RevisionQueue;

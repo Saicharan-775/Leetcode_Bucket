@@ -98,9 +98,9 @@ const Dashboard = () => {
                 </div>
             </div>
             
-            <RevisonProblemCard />
-            <RevisonProblemCard />
-            <RevisonProblemCard />
+             <RevisonProblemCard bucket="Strict"/>
+             <RevisonProblemCard bucket="Normal" />
+             <RevisonProblemCard bucket="Normal"/>
           </div>
         </div>
 
