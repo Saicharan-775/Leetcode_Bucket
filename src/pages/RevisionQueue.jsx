@@ -5,7 +5,10 @@ import {reviewcards} from "../constants/constants"// getting review cards data  
 import StatCards from '../ui/StatCards'
 import ProgressBar from '../ui/Progressbar'
 import RevisonProblemCard from '../ui/RevisonProblemCard'
+
 const RevisionQueue = () => {
+
+
   return (
     <div className='mt-2 '>
         <div className='flex justify-between'> 
@@ -65,7 +68,7 @@ const RevisionQueue = () => {
          </div>
        </div>
        {/* Revison Queue */}
-     <div className='p-4 m-2 w-6xl'>
+     <div className='p-4 m-2 w-7xl'>
       <div className='flex justify-between p-2'>
         <div className='flex'>
              <h1 className='text-4xl'>Revison Queue</h1>
@@ -74,10 +77,11 @@ const RevisionQueue = () => {
           <p className='text-[var(--muted-foreground)]'>Ordered by priority (Strict problems first)</p>
         </div>
       </div>
-      <div className='w-6xl'>
-         <RevisonProblemCard bucket="Strict"/>
-         <RevisonProblemCard bucket="Normal" />
-          <RevisonProblemCard bucket="Normal"/>
+      <div className='w-7xl justify-center'>
+                <RevisonProblemCard bucket="Strict" level="Medium" title="Pascals Triangle" name="pascals-triangle"/>
+                <RevisonProblemCard bucket="Strict" level="Hard" title="Trapping Rain Water" name="trapping-rain-water"/>
+                <RevisonProblemCard bucket="Normal" level="Easy"  title="Two Sum" name="two-sum"/>
+             
       </div>
       
        

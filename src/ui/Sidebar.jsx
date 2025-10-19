@@ -16,9 +16,9 @@ const Sidebar = ({ isOpen, setIsOpen }) => {
   ];
 
   return (
-    <div className="main-container h-screen">
+    <div className="main-container h-screen ">
       <div
-        className={`bg-[var(--card)] text-white h-full flex flex-col transition-all duration-300 fixed z-50 top-0 ${isOpen ? 'w-[250px]' : 'w-[50px]'} ${isOpen ? 'translate-x-0' : '-translate-x-full md:translate-x-0'}`}
+        className={`bg-[var(--card)] text-white h-full flex flex-col transition-all  duration-300 fixed z-50 top-0 ${isOpen ? 'w-[250px]' : 'w-[50px]'} ${isOpen ? 'translate-x-0' : '-translate-x-full md:translate-x-0'}`}
       >
         {/* Toggle button */}
         <button

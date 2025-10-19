@@ -25,8 +25,10 @@ body {
     --background: #0d1113;
     --foreground: #f5f5f5;
 
-    --card: #181a22;
-    --card-foreground: #1f2027;
+    --card: #0f1116; /* card background */
+--card-foreground: #1b1f28; /* subtle border */
+--shadow-card: 0 4px 12px rgba(0, 0, 0, 0.5); /* soft shadow */
+--shadow-card-hover: 0 8px 24px rgba(255, 112, 10, 0.6); /* hover shadow */
     
     --popover: #181a22;
     --popover-foreground: #f5f5f5;
@@ -64,7 +66,7 @@ body {
     /* Difficulty colors */
     --easy: #166534;
     --medium: #f97316;
-    --hard: #2c1e23;
+    --hard: #6f0404;
 
     /* Status colors */
     --success: #3ccc3c;

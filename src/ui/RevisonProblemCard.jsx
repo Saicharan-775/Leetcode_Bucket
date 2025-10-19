@@ -3,11 +3,23 @@ import "../index.css";
 import Tags from "../ui/Tags";
 import Button from "./button";
 import { ArrowRight, Clock } from "lucide-react";
-
-const RevisonProblemCard = ({ bucket,level }) => {
+import { Link } from "react-router-dom";
+const RevisonProblemCard = ({ bucket,level,name,title }) => {
   const status = bucket; // "Strict" or "Normal"
   const statusColor = status === "Strict" ? "bg-orange-500" : "bg-blue-500";
-  const Timer = level==="Easy"?"15 min" : "45 min";
+  // const Timer = level==="Easy"?"15 min" : "45 min";
+    const difficultyColors = {
+    Easy: "bg-[var(--easy)]",
+    Medium: "bg-[var(--medium)]",
+    Hard: "bg-[var(--hard)]",
+  };
+     const Timers = {
+    Easy: 15,
+    Medium: 45,
+    Hard: 60,
+  };
+  const color = difficultyColors[level] || "bg-gray-500";
+  const timer=Timers[level] ||20;
   return (
     <div
       className="
@@ -28,17 +40,17 @@ const RevisonProblemCard = ({ bucket,level }) => {
       <div className="flex flex-col gap-3 w-full md:w-auto pl-6">
         {/* Title + Difficulty + Time */}
         <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3">
-          <h1 className="font-bold text-lg text-white">Two Sum</h1>
+          <h1 className="font-medium text-lg text-white">{title}</h1>
 
           <div className="flex items-center gap-2">
             <p
-              className="text-xs font-semibold text-white px-2 py-1 rounded-3xl"
-              style={{ backgroundColor: "#166534" }}
+              className={` text-xs font-semibold text-white px-2 py-1 rounded-3xl ${color}`}
+              
             >
               {level}
             </p>
 
-            <Tags tag={Timer} icon={Clock} />
+           <p><Tags tag={timer} icon={Clock} /></p> 
           </div>
         </div>
 
@@ -59,7 +71,13 @@ const RevisonProblemCard = ({ bucket,level }) => {
 
       {/* Start Button */}
       <div className="w-full md:w-auto">
-        <Button icon={ArrowRight} name="Start" />
+        <a
+        href={`https://leetcode.com/problems/${name}/description/`}
+        target="_blank"
+        rel="noopener noreferrer"
+       >
+     <Button icon={ArrowRight} name="Start" />
+      </a>
       </div>
     </div>
   );

@@ -22,7 +22,7 @@ const Navbar = ({ toggleSidebar, isSidebarOpen }) => {
 
   return (
     <nav
-      className={`fixed top-0 left-4  right-4 w-auto z-40 flex items-center justify-between p-4 md:p-6 transition-all duration-300 ${
+      className={`fixed top-0 left-4  right-4 w-auto z-40 flex items-center justify-between  p-4 md:p-6 transition-all duration-300 ${
         isScrolled
           ? "bg-[rgba(13,17,19,0.9)] backdrop-blur-md border border-[#61656c]"
           : "bg-[rgba(13,17,19,0.1)] backdrop-blur-sm border border-transparent"

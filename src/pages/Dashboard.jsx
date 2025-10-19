@@ -1,4 +1,3 @@
-import React from "react";
 import Button from "../ui/button";
 import RevisonProblemCard from "../ui/RevisonProblemCard";
 import {
@@ -7,8 +6,7 @@ import {
   Plus,
   Target,
   Zap,
- 
-  
+  List,
 } from "lucide-react";
 import StatsCards from "../ui/StatCards";
 import Bucket from "../ui/buckets";
@@ -16,6 +14,7 @@ import StreakCard from "../ui/StreakCard";
 import ProgressCard from "../ui/ProgressCard";
 import Tags from "../ui/Tags";
 import {statCards} from "../constants/constants"
+import { Link } from "react-router-dom";
 
 const Dashboard = () => {
   return (
@@ -74,6 +73,7 @@ const Dashboard = () => {
                 name="Strict Bucket"
                 description="Hardcore practice mode"
                 value={15}
+                bucket="strict"
               />
               <Bucket
                 borderColor="#124149"
@@ -83,6 +83,7 @@ const Dashboard = () => {
                 name="Normal Bucket"
                 description="Regular learning mode"
                 value={75}
+                 bucket="normal"
               />
             </div>
           </div>
@@ -97,10 +98,22 @@ const Dashboard = () => {
                <Tags tag="3 Problems"/>
                 </div>
             </div>
-            
-             <RevisonProblemCard bucket="Strict"/>
-             <RevisonProblemCard bucket="Normal" />
-             <RevisonProblemCard bucket="Normal"/>
+                <RevisonProblemCard bucket="Strict" level="Medium" title="Pascals Triangle" name="pascals-triangle"/>
+                <RevisonProblemCard bucket="Strict" level="Hard" title="Trapping Rain Water" name="trapping-rain-water"/>
+                <RevisonProblemCard bucket="Normal" level="Easy"  title="Two Sum" name="two-sum"/>
+ 
+
+            <div className="flex justify-center">
+              <Link
+                to="/revision-queue"
+                className="inline-flex items-center gap-2 font-medium px-2 py-2 rounded-xl shadow cursor-pointer
+                          transition-all duration-300 hover:scale-105 hover:shadow-lg hover:opacity-90"
+              >
+                <Button name="View All" icon={List}/>
+                
+              </Link>
+            </div>
+
           </div>
         </div>
 

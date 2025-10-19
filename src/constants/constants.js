@@ -23,7 +23,7 @@ export const reviewcards=[
     iconColor: "#03c4d3",
   },
    {
-    title: "completed",
+    title: "Completed",
     value: "40",
     icons: CircleCheck,
     bgColor: "#1b2d23",

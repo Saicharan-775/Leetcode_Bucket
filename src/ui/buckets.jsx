@@ -1,8 +1,9 @@
 import React from "react";
 import ProgressBar from "../ui/Progressbar";
 import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
-const Buckets = ({ borderColor, bgColor, iconColor, icon: Icon, name, description, value }) => {
+const Buckets = ({ borderColor, bgColor, iconColor, icon: Icon, name, description, value,bucket }) => {
   return (
     <div className="w-full">
       <div
@@ -47,13 +48,14 @@ const Buckets = ({ borderColor, bgColor, iconColor, icon: Icon, name, descriptio
             <span className="text-amber-400 font-bold">5</span> due problems
           </p>
 
-          <button
+          <Link
+  to={`/${bucket}-bucket`}
             className="inline-flex items-center gap-2 font-medium px-4 py-2 rounded-xl shadow cursor-pointer
                        transition-all duration-300 hover:scale-105 hover:shadow-lg hover:opacity-90"
             style={{ backgroundColor: bgColor, color: iconColor }}
           >
             Open Bucket <ArrowRight color={iconColor} />
-          </button>
+          </Link>
         </div>
       </div>
     </div>
