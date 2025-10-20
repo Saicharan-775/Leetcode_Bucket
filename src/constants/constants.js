@@ -16,6 +16,7 @@ import {
   ClockAlert,
   ClipboardCheck,
   ChartNoAxesCombined,
+  BicepsFlexed,
 } from "lucide-react";
 export const reviewcards=[
   {
@@ -47,7 +48,7 @@ export const reviewcards=[
     iconColor: "#30c032",
   },
 ]
-//------------------------------this is StatCards  ---------------------------------------------------------------------------------
+//------------------------------this is StatCards (Dashboard) ---------------------------------------------------------------------------------
  export const statCards = [
   {
     title: "Total Problems",
@@ -97,8 +98,8 @@ export const reviewcards=[
     {
       heading: "Buckets",
       links: [
-        { name: "Strict Mode", path: "/strict-bucket", icon: Target, color: "#fd6a21" },
-        { name: "Normal Mode", path: "/normal-bucket", icon: Zap, color: "#10bff5" },
+        { name: "Strict Bucket", path: "/strict-bucket", icon: Target, color: "#fd6a21" },
+        { name: "Normal Bucket", path: "/normal-bucket", icon: Zap, color: "#10bff5" },
       ],
     },
     {
@@ -106,6 +107,7 @@ export const reviewcards=[
       links: [
         { name: "Analytics", path: "/analysis", icon: BarChart },
         { name: "Problem History", path: "/history", icon: History },
+        { name: "Daily Flex", path: "/daily-flex", icon: BicepsFlexed },
       ],
     },
     {

@@ -22,7 +22,7 @@ const RevisionQueue = () => {
               <ClipboardClock size={28}/>
             </div>
             <div>
-              <h1 className='text-3xl font-medium'>Today's Revision Queue</h1>
+              <h1 className='text-3xl font-medium'>Today's Plan</h1>
               <p className='text-[var(--muted-foreground)]'>5 problems remaining • ~2h 15m estimated</p>
             </div>
           </div>
@@ -82,7 +82,7 @@ const RevisionQueue = () => {
         {/* Revision Queue List */}
         <div className='mt-6 w-full max-w-[1400px] mx-auto'>
           <div className='flex justify-between items-center mb-4'>
-            <h1 className='text-3xl font-semibold'>Revision Queue</h1>
+            <h1 className='text-3xl font-semibold'>Toady's  Problems</h1>
             <p className='text-[var(--muted-foreground)]'>Ordered by priority (Strict problems first)</p>
           </div>
 

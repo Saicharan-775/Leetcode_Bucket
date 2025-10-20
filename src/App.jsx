@@ -11,6 +11,7 @@ import MainLayout from "./layouts/MainLayouts";
 import RevisionQueue from './pages/RevisionQueue';
 import Settings  from './pages/Settings';
 import  History  from './pages/ProblemHistory';
+import DailyFlex from './pages/DailyFlex';
 const approuter = createBrowserRouter([
   // Login route
   {
@@ -34,6 +35,7 @@ const approuter = createBrowserRouter([
       { path: "/revision-queue", element: <RevisionQueue /> },
      { path: "/settings", element: <Settings /> },
      { path: "/history", element: <History /> },
+     { path: "/daily-flex", element: <DailyFlex /> },
     ],
   },
 ]);

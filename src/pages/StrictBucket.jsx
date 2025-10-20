@@ -1,7 +1,7 @@
 import React from "react";
 import { StrictCard } from "../constants/constants";
 import StatCards from "../ui/StatCards";
-import { ClipboardClock, RefreshCcw, Play ,Search, Filter, SortDesc} from "lucide-react";
+import { Target, RefreshCcw, Play ,Search, Filter, SortDesc} from "lucide-react";
 import Button from "../ui/button";
 import ProblemCard from "../ui/ProblemCard";
 
@@ -11,9 +11,10 @@ const StrictBucket = () => {
       {/* Header */}
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 md:gap-6">
         <div className="flex gap-3 items-center">
-          <div className="bg-[#143748] text-[#1990cd] rounded-xl p-3">
-            <ClipboardClock size={28} />
+          <div className="bg-[#2e2723] text-[#ff922b] rounded-xl p-3">
+            <Target size={28} />
           </div>
+      
           <div>
             <h1 className="text-3xl font-semibold">Strict Bucket</h1>
             <p className="text-[var(--muted-foreground)] text-sm md:text-base">
