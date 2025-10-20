@@ -13,6 +13,9 @@ import {
   CircleCheck,
   Clock,
   CircleCheckBig,
+  ClockAlert,
+  ClipboardCheck,
+  ChartNoAxesCombined,
 } from "lucide-react";
 export const reviewcards=[
   {
@@ -113,3 +116,41 @@ export const reviewcards=[
       ],
     },
   ];
+// ----------------------------------Strictcard-----------------------------
+ export const StrictCard = [
+  {
+    title: "Total Problems",
+    value: "100",
+    icons: TrendingUp,
+    bgColor: "#192a37",
+    iconColor: "#1ba6ed",
+  },
+  {
+    title: "Pending Today",
+    value: "20",
+    icons: ClockAlert,
+    bgColor: "#2e2723",
+    iconColor: "#ff922b",
+  },
+  {
+    title: "Completed",
+    value: "125",
+    icons: ClipboardCheck,
+    bgColor: "#1a2d22",
+    iconColor: "#31b931",
+  },
+  {
+    title: "Avg Review Time",
+    value: "18 min",
+    icons: Clock,
+    bgColor: "#2f2a21",
+    iconColor: "#daad1e",
+  },
+  {
+    title: "Consistency Rate",
+    value: "87%",
+    icons: ChartNoAxesCombined,
+    bgColor: "#1a2d22",
+    iconColor: "#31b931",
+  },
+];

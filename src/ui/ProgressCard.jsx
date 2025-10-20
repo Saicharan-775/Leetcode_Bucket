@@ -15,7 +15,7 @@ const ProgressCard = () => {
   const normalProgress = Math.round((normalSolved / normalTotal) * 100);
 
   return (
-    <div className="bg-[var(--card)  border border-[var(--card-foreground)] hover:bg-[#021719] transition-all duration-300 p-4 md:p-6 rounded-2xl mb-2 w-full h-fit shadow-lg border border-gray-800">
+    <div className="bg-[var(--card)  primary-foreground border-[var(--card-foreground)] hover:bg-[var(--primary-foreground)] transition-all duration-300 p-4 md:p-6 rounded-2xl mb-2 w-full h-fit shadow-lg border ">
       {/* Title */}
       <h1 className="text-gray-300 font-semibold text-lg mb-4">Overall Progress</h1>
 
@@ -25,7 +25,7 @@ const ProgressCard = () => {
       {/* Overall Progress Bar */}
       <div className="w-full bg-gray-800 h-3 rounded-full overflow-hidden mb-6">
         <div
-          className="bg-indigo-500 h-3 rounded-full transition-all duration-500"
+          className="bg-[#8C4ACD] h-3 rounded-full transition-all duration-500"
           style={{ width: `${overallProgress}%` }}
         ></div>
       </div>

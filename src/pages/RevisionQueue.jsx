@@ -48,20 +48,36 @@ const RevisionQueue = () => {
         </div>
 
         {/* Session Progress */}
-        <div className='bg-[var(--card)] w-full mt-6 rounded-lg p-4'>
-          <div className='flex justify-between'>
-            <h1 className='text-lg font-medium'>Session Progress</h1>
-            <h1 className='text-sm'>3/5 Problems</h1>
-          </div>
-          <div className='mt-4'>
-            <ProgressBar value={70} max={100}/>
-          </div>
-          <div className='flex justify-between text-[var(--muted-foreground)] mt-4'>
-            <p>Started</p>
-            <p>70% completed</p>
-            <p>Finished</p>
-          </div>
-        </div>
+   <div className="
+  bg-[var(--background)]
+  border border-[var(--card-foreground)]/20
+  w-full mt-6 rounded-xl p-5
+  transition-all duration-300
+  hover:border-[var(--card-foreground)]/40
+  hover:bg-[var(--primary-foreground)]
+  shadow-sm hover:shadow-md
+">
+  <div className="flex justify-between items-center">
+    <h1 className="text-lg font-medium text-[var(--foreground)]">
+      Session Progress
+    </h1>
+    <h1 className="text-sm text-[var(--muted-foreground)]">
+      3/5 Problems
+    </h1>
+  </div>
+
+  <div className="mt-5">
+    <ProgressBar value={70} max={100} />
+  </div>
+
+  <div className="flex justify-between text-[var(--muted-foreground)] mt-4 text-sm">
+    <p>Started</p>
+    <p>70% completed</p>
+    <p>Finished</p>
+  </div>
+</div>
+
+
 
         {/* Revision Queue List */}
         <div className='mt-6 w-full max-w-[1400px] mx-auto'>

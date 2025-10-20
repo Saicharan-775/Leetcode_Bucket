@@ -1,6 +1,6 @@
 import React from "react";
 
-const ProgressBar = ({ value, max, color = "#3b82f6" }) => {
+const ProgressBar = ({ value, max, color = "#8C4ACD" }) => {
   const percentage = Math.min((value / max) * 100, 100);
 
   return (

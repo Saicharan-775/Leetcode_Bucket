@@ -6,7 +6,7 @@ import '../index.css'
 
 const StatCards = ({ title, value ,icons:Icon,bgColor,iconColor}) => {
   return (
-    <div className="bg-[#121426]] mt-5 border border-[#292e31] px-4 py-4 m-1 rounded-xl w-full hover:bg-[#021719] transition-all duration-200">
+    <div className="bg-[var(--background)] mt-5 border border-[#292e31] px-4 py-4 m-1 rounded-xl w-full hover:bg-[var(--primary-foreground)] transition-all duration-200">
       {/* Top row: Title + Icon */}
       <div className="flex justify-between items-center mb-2">
         <h1 className="text-lg font-semibold truncate ">{title}</h1>
