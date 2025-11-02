@@ -81,4 +81,4 @@ It’s not just a tracker — it’s your **personal DSA mentor**.
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/leetcode-bucket.git
+   git clone https://github.com/Saicharan-775/Leetcode_Bucket.git
