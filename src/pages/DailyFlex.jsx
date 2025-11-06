@@ -30,7 +30,7 @@ const DailyFlex = () => {
     <motion.div
       initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6 }}
+      transition={{ duration: 0.5 }}
       className="mt-8 flex justify-center"
     >
       <div className="relative bg-gradient-to-br from-[#1e1f29] to-[#2c2e3e] border border-[var(--border)] shadow-xl shadow-black/30 rounded-2xl p-6 w-[420px] text-center hover:shadow-[0_0_20px_rgba(255,255,255,0.05)] transition-all">

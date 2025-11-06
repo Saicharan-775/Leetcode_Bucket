@@ -82,7 +82,7 @@ const RevisionQueue = () => {
         {/* Revision Queue List */}
         <div className='mt-6 w-full max-w-[1400px] mx-auto'>
           <div className='flex justify-between items-center mb-4'>
-            <h1 className='text-3xl font-semibold'>Toady's  Problems</h1>
+            <h1 className='text-3xl font-semibold'>Today's  Problems</h1>
             <p className='text-[var(--muted-foreground)]'>Ordered by priority (Strict problems first)</p>
           </div>
 
